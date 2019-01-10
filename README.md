@@ -1,14 +1,13 @@
 # sparkpost-bundle [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://github.com/Hanfrey/sparkpost-bundle/blob/master/LICENSE)
 
-Bundle for using Sparkpost in symfony
+Bundle for using PeytzSend (Sparkpost) in symfony
+Forked from https://github.com/Hanfrey/sparkpost-bundle
+
 # Installation
 
-## Step 1) Get the bundle
+## Step 1) Get the bundle 
 
- 
-
-    composer require hanfrey/sparkpost-bundle
-
+    composer require peytz/peytzsend-bundle
 
 ## Step 2) Register the bundle
 
@@ -21,7 +20,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new Hanfrey\SparkpostBundle\HanfreySparkpostBundle(),
+        new Peytz\PeytzsendBundle\PeytzsendBundle(),
         // ...
     );
 }
@@ -33,19 +32,21 @@ public function registerBundles()
 Here is an example:
 ```yaml
 # app/config/config.yml
-hanfrey_sparkpost:
+peytz_peytzsend:
     api_token: 1212334ba # replace with your own
+    api_host: api.eu.sparkpost.com
 ```
 
 ## Step 4) Example Usage in a controller
 
 ```php
-$sparky= $this->get("hanfrey_sparkpost.api_client");
+
+$ps_client = $this->get("peytz_peytzsend.api_client");
 
 try {
     // Build your email and send it!
-    $results = $sparky->transmission->send([
-        'from'=>'From Envelope <from@sparkpostbox.com>',
+    $results = $ps_client->transmission->send([
+        'from'=>'From Envelope <from@example.com>',
         'html'=>'<html><body><h1>Congratulations, {{name}}!</h1><p>You just sent your very first mailing!</p></body></html>',
         'text'=>'Congratulations, {{name}}!! You just sent your very first mailing!',
         'substitutionData'=>['name'=>'YOUR FIRST NAME'],
