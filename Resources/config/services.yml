@@ -1,18 +1,18 @@
 parameters:
-    hanfrey_sparkpost.api_client.class: SparkPost\SparkPost
-    hanfrey_sparkpost.http_adapter.class: Ivory\HttpAdapter\Guzzle6HttpAdapter
-    hanfrey_sparkpost.guzzle_client.class: GuzzleHttp\Client
+    peytz_peytzsend.api_client.class: SparkPost\SparkPost
+    peytz_peytzsend.http_adapter.class: Ivory\HttpAdapter\Guzzle6HttpAdapter
+    peytz_peytzsend.guzzle_client.class: GuzzleHttp\Client
 
 services:
-    hanfrey_sparkpost.http_adapter:
-        class: "%hanfrey_sparkpost.http_adapter.class%"
-        arguments: ["@hanfrey_sparkpost.client_adapter"]
+    peytz_peytzsend.http_adapter:
+        class: "%peytz_peytzsend.http_adapter.class%"
+        arguments: ["@peytz_peytzsend.client_adapter"]
 
-    hanfrey_sparkpost.client_adapter:
-        class: "%hanfrey_sparkpost.guzzle_client.class%"
+    peytz_peytzsend.client_adapter:
+        class: "%peytz_peytzsend.guzzle_client.class%"
 
-    hanfrey_sparkpost.api_client:
-        class: "%hanfrey_sparkpost.api_client.class%"
+    peytz_peytzsend.api_client:
+        class: "%peytz_peytzsend.api_client.class%"
         arguments:
-              - "@hanfrey_sparkpost.http_adapter"
-              - key: "%hanfrey_sparkpost.api_token%"
+              - "@peytz_peytzsend.http_adapter"
+              - { key: "%peytz_peytzsend.api_token%", host: "%peytz_peytzsend.api_host%" }

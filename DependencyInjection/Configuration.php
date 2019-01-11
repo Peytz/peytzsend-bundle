@@ -1,6 +1,6 @@
 <?php
 
-namespace Hanfrey\SparkpostBundle\DependencyInjection;
+namespace Peytz\PeytzsendBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -18,10 +18,11 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('hanfrey_sparkpost');
+        $rootNode = $treeBuilder->root('peytz_peytzsend');
         $rootNode
             ->children()
             ->scalarNode('api_token')->defaultNull()->end()
+            ->scalarNode('api_host')->defaultNull()->end()
             ->end()
         ;
         return $treeBuilder;

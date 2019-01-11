@@ -1,6 +1,7 @@
 # sparkpost-bundle [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://github.com/Hanfrey/sparkpost-bundle/blob/master/LICENSE)
 
 Bundle for using PeytzSend (Sparkpost) in symfony
+
 Forked from https://github.com/Hanfrey/sparkpost-bundle
 
 # Installation

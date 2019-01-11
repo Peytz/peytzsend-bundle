@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Hanfrey\SparkpostBundle\DependencyInjection;
+namespace Peytz\PeytzsendBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
@@ -20,7 +20,7 @@ use Symfony\Component\DependencyInjection\Loader;
  *
  * @link http://symfony.com/doc/current/cookbook/bundles/extension.html
  */
-class HanfreySparkpostExtension extends Extension
+class PeytzPeytzsendExtension extends Extension
 {
     /**
      * {@inheritdoc}
@@ -29,13 +29,12 @@ class HanfreySparkpostExtension extends Extension
     {
         $configuration = new Configuration();
         $config        = $this->processConfiguration($configuration, $configs);
-        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
+        $loader        = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
 
-        $container->setParameter('hanfrey_sparkpost.api_token',$config['api_token']);
+        $container->setParameter('peytz_peytzsend.api_token',$config['api_token']);
+        $container->setParameter('peytz_peytzsend.api_host',$config['api_host']);
        
-        //   $this->setParameters($container, $config);
         $loader->load('services.yml');
-
     }
 }
 

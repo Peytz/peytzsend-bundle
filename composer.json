@@ -1,7 +1,8 @@
 {
-  "name": "hanfrey/sparkpost-bundle",
-  "description": "This bundle provides integration with the Sparkpost API library, allowing you to interact with the Sparkpost API from within your Symfony projects",
+  "name": "peytz/peytzsend-bundle",
+  "description": "This bundle provides integration with the Peytzsend / Sparkpost API library, allowing you to interact with the Sparkpost API from within your Symfony projects",
   "keywords": [
+    "peytzsend",
     "sparkpost",
     "api",
     "symfony",
@@ -11,9 +12,9 @@
   "license": "MIT",
   "authors": [
     {
-      "name": "Hanfrey",
-      "homepage": "https://github.com/hanfrey",
-      "email": "hanfreyy@gmail.com"
+      "name": "Henrik Jensen",
+      "homepage": "https://github.com/henrikj242",
+      "email": "henrik242@gmail.com"
     }
   ],
   "require": {
@@ -28,7 +29,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Hanfrey\\SparkpostBundle\\": ""
+      "Peytz\\PeytzsendBundle\\": ""
     }
   },
   "config": {
